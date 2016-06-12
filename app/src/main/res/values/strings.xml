@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LocAmiga</string>
+    <string name="facebook_app_id">1792937594268756</string>
+    <string name="title_activity_app_page">LocAmiga</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Sair</string>
+
+</resources>

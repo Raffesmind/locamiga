@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "locamiga.com.br.locamiga"
+        minSdkVersion 21
+        targetSdkVersion 22
+        versionCode 10
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.android.support:design:23.4.0'
+
+
+
+
+
+
+    // === [MP-SDK] dependency for SDK projects
+    // Project dependencies
+
+
+    // === Other External libraries
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'io.card:android-sdk:5.0.1'
+    compile('commons-validator:commons-validator:1.4.0') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    compile 'com.google.code.gson:gson:2.3'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+
+    // === [MCO-SDK] dependency
+    compile('org.simpleframework:simple-xml:2.7.1') {
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'xpp3', module: 'xpp3'
+    }
+
+    // === [MCO-SDK] libraries
+    compile(name:'mobile-checkout-core-lib-release', ext:'aar')
+    compile(name:'masterpass-core-release', ext:'aar')
+    compile(name:'mobile-checkout-wallet-lib-release', ext:'aar')
+    compile(name:'masterpass-wallet-release', ext:'aar')
+    }
